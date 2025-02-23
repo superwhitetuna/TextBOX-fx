@@ -1,3 +1,8 @@
+const header = document.querySelector('.header');
+const messagesContainer = document.querySelector('.messages-container')
+const headerHeight = header.offsetHeight;
+messagesContainer.style.top = '${headerHeight}px';
+
 function handleSubmit() {
     const input = document.getElementById('userInput');
     const text = input.value.trim();
@@ -7,6 +12,7 @@ function handleSubmit() {
         const messageElement = document.createElement('div');
         messageElement.className = 'message';
         messageElement.textContent = text;
+        
 
         messagesDiv.appendChild(messageElement);
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
