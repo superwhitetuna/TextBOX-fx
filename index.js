@@ -12,7 +12,11 @@ function handleSubmit() {
         const messageElement = document.createElement('div');
         messageElement.className = 'message';
         messageElement.textContent = text;
-        
+
+        const entranceEffects = ['slide-in-bottom', 'fade-in', 'slide-in-left',
+             'slide-in-right', 'scale-in'];
+        const randomIndex = Math.floor(Math.random() * entranceEffects.length);
+        messageElement.classList.add(entranceEffects[randomIndex]);
 
         messagesDiv.appendChild(messageElement);
         messagesDiv.scrollTop = messagesDiv.scrollHeight;
