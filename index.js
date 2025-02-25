@@ -13,8 +13,18 @@ function handleSubmit() {
         messageElement.className = 'message';
         messageElement.textContent = text;
 
-        const entranceEffects = ['slide-in-bottom', 'fade-in', 'slide-in-left',
-             'slide-in-right', 'scale-in'];
+        const entranceEffects = [
+            'slide-in-bottom',
+            'fade-in',
+            'slide-in-left',
+            'slide-in-right',
+            'scale-in',
+            'bounce-in',
+            'rotate-in',
+            'pulse',
+            'shake',
+            'flip-in'
+        ];
         const randomIndex = Math.floor(Math.random() * entranceEffects.length);
         messageElement.classList.add(entranceEffects[randomIndex]);
 
