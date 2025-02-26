@@ -15,7 +15,6 @@ function handleSubmit() {
 
         const entranceEffects = [
             'slide-in-bottom',
-            'fade-in',
             'slide-in-left',
             'slide-in-right',
             'scale-in',

@@ -13,6 +13,30 @@ body {
     z-index: 10;
 }
 
+/* X Profile Button */
+
+.image-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.image-button img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; 
+    border: 2px solid #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); 
+}
+
+.image-button:hover {
+    opacity: 0.8;
+}
+
+/* End X Profile Button */
+
 .messages-container {
     position: fixed;
     left: 0;
