@@ -1,7 +1,7 @@
 const header = document.querySelector('.header');
 const messagesContainer = document.querySelector('.messages-container')
 const headerHeight = header.offsetHeight;
-messagesContainer.style.top = '${headerHeight}px';
+messagesContainer.style.top = `${headerHeight}px`;
 
 function handleSubmit() {
     const input = document.getElementById('userInput');
