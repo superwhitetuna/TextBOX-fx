@@ -253,9 +253,9 @@ input {
 button {
     padding: 8px 12px;
     margin-right: 10px;
-    background-color: #4caf50;
+    background-color: #a9aba9;
     color: white;
-    border: none;
+    border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
     white-space: nowrap;
@@ -264,7 +264,7 @@ button {
 }
 
 button:hover {
-    background-color: #45a049;
+    background-color: #9c9c9c;
 }
 
 /* Scrollbar Customization */
