@@ -20,6 +20,7 @@ body {
     color: var(--text-color);
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
     scrollbar-width: thin;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 .header {
@@ -33,11 +34,13 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 10px;
+    transition: background-color 0.4s;
 }
 
 .header-link, .header-link:visited {
     color: inherit;
     text-decoration: none;
+    transition: color 0.4s;
 }
 
 .header-link:hover {
@@ -80,6 +83,7 @@ body {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    transition: background-color 0.4s;
 }
 
 .message {
@@ -90,6 +94,7 @@ body {
     color: var(--message-text);
     max-width: 99%;
     word-wrap: break-word;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 /* Message Effects */
@@ -261,6 +266,7 @@ body {
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
     padding-left: max(10px, env(safe-area-inset-left));
     padding-right: max(10px, env(safe-area-inset-right));
+    transition: backgroun-color 0.4s, color 0.4s;
 }
 
 input {
@@ -272,6 +278,7 @@ input {
     width: 0;
     background-color: var(--input-background);
     color: var(--text-color);
+    transition: background-color: 0.4s, color 0.4s;
 }
 
 button {
@@ -285,6 +292,7 @@ button {
     white-space: nowrap;
     flex-shrink: 0;
     width: auto;
+    transition: backgroung-color 0.4s, color 0.4s;
 }
 
 button:hover {
@@ -320,11 +328,19 @@ button:hover {
     display: flex;
     align-items: center;
     gap: 10px;
+    width: auto;
+    margin: 0;
+    cursor: pointer;
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
 }
 
 .header-right {
     display: flex;
     align-items: center;
+    justify-content: flex-end;
     gap: 10px;
 }
 
