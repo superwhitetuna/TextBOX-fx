@@ -278,7 +278,7 @@ input {
     width: 0;
     background-color: var(--input-background);
     color: var(--text-color);
-    transition: background-color: 0.4s, color 0.4s;
+    transition: background-color 0.4s, color 0.4s;
 }
 
 button {
@@ -309,11 +309,13 @@ button:hover {
     ::-webkit-scrollbar-track {
         background: var(--scrollbar-track);
         border-radius: 6px;
+        transition: scrollbar-track 0.4s;
     }
 
     ::-webkit-scrollbar-thumb {
         background: var(--scrollbar-thumb);
         border-radius: 6px;
+        transition: scrollbar-thumb 0.4s;
     }
 
     ::-webkit-scrollbar-thumb:hover {
@@ -357,6 +359,15 @@ button:hover {
     height: 0;
 }
 
+.dark-mode-text {
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+
+.toggle-container:hover .dark-mode-text {
+    opacity: 1;
+}
+
 .slider {
     position: absolute;
     cursor: pointer;
@@ -377,8 +388,20 @@ button:hover {
     left: 4px;
     bottom: 4px;
     background-color: white;
-    transition: .4s;
+    transition: transform 0.4s, background-color 0.4s;
     border-radius: 50%;
+}
+
+.slider:after {
+    content: "";
+    position: absolute;
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: transparent;
+    border-radius: 50%;
+    transition: transform 0.4s, background-color 0.4s;
 }
 
 input:checked + .slider {
@@ -387,6 +410,12 @@ input:checked + .slider {
 
 input:checked + .slider:before {
     transform: translateX(26px);
+    background-color: #ffd700;
+}
+
+input:checked + .slider:after {
+    transform: translateX(17px);
+    background-color: #121212;
 }
 
 /* Dark Mode Styling */
@@ -404,6 +433,10 @@ body.dark-mode {
     --scrollbar-thumb: #555;
     --scrollbar-thumb-hover: #777;
     --button-hover: #444444;
+}
+
+body.dark-mode .dark-mode-text {
+    opacity: 0;
 }
 
 body.dark-mode .header-link:hover {
