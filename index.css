@@ -1,7 +1,25 @@
+:root {
+    --background-color: #d8d8d8;
+    --header-background: #d8d8d8;
+    --message-background: #f0f0f0;
+    --message-text: #000000;
+    --input-background: #ffffff;
+    --button-background: #a9aba9;
+    --button-text: #ffffff;
+    --text-color: #000000;
+    --scrollbar-track: #d8d8d8;
+    --scrollbar-thumb: #888;
+    --scrollbar-thumb-hover: #555;
+    --button-hover: #9c9c9c;
+}
+
 /* Styling */
 
 body {
-    background-color: #d8d8d8;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
+    scrollbar-width: thin;
 }
 
 .header {
@@ -9,8 +27,12 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    background-color: #d8d8d8;
+    background-color: var(--header-background);
     z-index: 10;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
 }
 
 .header-link, .header-link:visited {
@@ -25,25 +47,24 @@ body {
 
 /* X Profile Button */
 
-.image-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    cursor: pointer;
-    transition: opacity 0.3s ease;
-}
+    .image-button {
+        top: 10px;
+        right: 10px;
+        cursor: pointer;
+        transition: opacity 0.3s ease;
+    }
 
-.image-button img {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%; 
-    border: 2px solid #fff; 
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
-}
+    .image-button img {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%; 
+        border: 2px solid #fff; 
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3); 
+    }
 
-.image-button:hover {
-    opacity: 0.8;
-}
+    .image-button:hover {
+        opacity: 0.8;
+    }
 
 /* END X Profile Button */
 
@@ -53,6 +74,7 @@ body {
     right: 0;
     bottom: 60px;
     padding: 10px;
+    background-color: var(--background-color);
     overflow-y: auto;
     scroll-behavior: smooth;
     display: flex;
@@ -63,166 +85,166 @@ body {
 .message {
     padding: 8px;
     margin-bottom: 10px;
-    background-color: #f0f0f0;
+    background-color: var(--message-background);
     border-radius: 4px;
-    color: black;
+    color: var(--message-text);
     max-width: 99%;
     word-wrap: break-word;
 }
 
 /* Message Effects */
 
-.slide-in-bottom {
-    animation: slideInBottom 0.7s ease-out forwards;
-}
+    .slide-in-bottom {
+        animation: slideInBottom 0.7s ease-out forwards;
+    }
 
-@keyframes slideInBottom {
-    0% {
-        transform: translateY(100%);
-        opacity: 0;
+    @keyframes slideInBottom {
+        0% {
+            transform: translateY(100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateY(0);
+            opacity: 1;
+        }
     }
-    100% {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
 
-/* .fade-in {
-    animation: fadeIn 0.7s ease-out forwards;
-}
+    /* .fade-in {
+        animation: fadeIn 0.7s ease-out forwards;
+    }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
-} */
+    @keyframes fadeIn {
+        0% {
+            opacity: 0;
+        }
+        100% {
+            opacity: 1;
+        }
+    } */
 
-.slide-in-left {
-    animation: slideInLeft 0.7s ease-out forwards;
-}
+    .slide-in-left {
+        animation: slideInLeft 0.7s ease-out forwards;
+    }
 
-@keyframes slideInLeft {
-    0% {
-        transform: translateX(-100%);
-        opacity: 0;
+    @keyframes slideInLeft {
+        0% {
+            transform: translateX(-100%);
+            opacity: 0;
+        }
+        100% {
+            transform: translateX(0);
+            opacity: 1;
+        }
     }
-    100% {
-        transform: translateX(0);
-        opacity: 1;
-    }
-}
 
-.slide-in-right {
-    animation: slideInRight 0.7s ease-out forwards;
-}
+    .slide-in-right {
+        animation: slideInRight 0.7s ease-out forwards;
+    }
 
-@keyframes slideInRight {
-    0% {
-        transform: translateX(100%);
-        opacity: 1;
+    @keyframes slideInRight {
+        0% {
+            transform: translateX(100%);
+            opacity: 1;
+        }
     }
-}
 
-.scale-in {
-    animation: scaleIn 0.7s ease-out forwards;
-}
+    .scale-in {
+        animation: scaleIn 0.7s ease-out forwards;
+    }
 
-@keyframes scaleIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
+    @keyframes scaleIn {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        100% {
+            transform: scale(1);
+            opacity: 1;
+        }
     }
-    100% {
-        transform: scale(1);
-        opacity: 1;
-    }
-}
 
-.bounce-in {
-    animation: bounceIn 0.4s ease-out forwards;
-}
+    .bounce-in {
+        animation: bounceIn 0.4s ease-out forwards;
+    }
 
-@keyframes bouceIn {
-    0% {
-        transform: scale(0.5);
-        opacity: 0;
+    @keyframes bouceIn {
+        0% {
+            transform: scale(0.5);
+            opacity: 0;
+        }
+        60%{
+            transform: scale(1.1);
+            opacity: 1;
+        }
+        80% {
+            transform: scale(0.9);
+        }
+        100% {
+            transform: scale(1.0);
+        }
     }
-    60%{
-        transform: scale(1.1);
-        opacity: 1;
-    }
-    80% {
-        transform: scale(0.9);
-    }
-    100% {
-        transform: scale(1.0);
-    }
-}
 
-.rotate-in {
-    animation: rotateIn 0.7s ease-out forwards;
-}
+    .rotate-in {
+        animation: rotateIn 0.7s ease-out forwards;
+    }
 
-@keyframes rotateIn {
-    0% {
-        transform: rotate(-15deg);
-        opacity: 0;
+    @keyframes rotateIn {
+        0% {
+            transform: rotate(-15deg);
+            opacity: 0;
+        }
+        100% {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
     }
-    100% {
-        transform: rotate(0deg);
-        opacity: 1;
-    }
-}
 
-.pulse {
-    animation: pulse 0.7s ease-out forwards;
-}
+    .pulse {
+        animation: pulse 0.7s ease-out forwards;
+    }
 
-@keyframes pulse {
-    0% {
-        transform: scale(1.0);
+    @keyframes pulse {
+        0% {
+            transform: scale(1.0);
+        }
+        50% {
+            transform: scale(1.05);
+        }
+        100% {
+            transform: scale(1.0);
+        }
     }
-    50% {
-        transform: scale(1.05);
-    }
-    100% {
-        transform: scale(1.0);
-    }
-}
 
-.shake {
-    animation: shake 3.0s ease-out forwards;
-}
+    .shake {
+        animation: shake 3.0s ease-out forwards;
+    }
 
-@keyframes shake {
-    0%, 100% {
-        transform: translateX(0);
+    @keyframes shake {
+        0%, 100% {
+            transform: translateX(0);
+        }
+        10%, 30%, 50%, 70%, 90% {
+            transform: translateX(-5px);
+        }
+        20%, 40%, 60%, 80% {
+            transform: translateX(5px);
+        }
     }
-    10%, 30%, 50%, 70%, 90% {
-        transform: translateX(-5px);
-    }
-    20%, 40%, 60%, 80% {
-        transform: translateX(5px);
-    }
-}
 
-.flip-in {
-    animation: flipIn 0.7s ease-out forwards;
-}
+    .flip-in {
+        animation: flipIn 0.7s ease-out forwards;
+    }
 
-@keyframes flipIn {
-    0% {
-        transform: perspective(400px) rotateY(90deg);
-        opacity: 0;
+    @keyframes flipIn {
+        0% {
+            transform: perspective(400px) rotateY(90deg);
+            opacity: 0;
+        }
+        100% {
+            transform: perspective(400px) rotateY(0deg);
+            opacity: 1;
+        }
     }
-    100% {
-        transform: perspective(400px) rotateY(0deg);
-        opacity: 1;
-    }
-}
 
 /* END Message Effects */
 
@@ -233,7 +255,7 @@ body {
     right: 0;
     padding: 10px;
     margin: 0 auto;
-    background-color: white;
+    background-color: var(--input-background);
     display: flex;
     gap: 8px;
     box-shadow: 0 -2px 5px rgba(0,0,0,0.1);
@@ -248,13 +270,15 @@ input {
     border-radius: 4px;
     min-width: 0;
     width: 0;
+    background-color: var(--input-background);
+    color: var(--text-color);
 }
 
 button {
     padding: 8px 12px;
     margin-right: 10px;
-    background-color: #a9aba9;
-    color: white;
+    background-color: var(--button-background);
+    color: var(--button-text);
     border: 1px solid #ccc;
     border-radius: 4px;
     cursor: pointer;
@@ -264,33 +288,115 @@ button {
 }
 
 button:hover {
-    background-color: #9c9c9c;
+    background-color: var(--button-hover);
 }
 
 /* Scrollbar Customization */
 
-::-webkit-scrollbar {
-    width: 5px;
-    height: 5px;
-}
+    ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+    }
 
-::-webkit-scrollbar-track {
-    background: #d8d8d8;
-    border-radius: 6px;
-}
+    ::-webkit-scrollbar-track {
+        background: var(--scrollbar-track);
+        border-radius: 6px;
+    }
 
-::-webkit-scrollbar-thumb {
-    background: #888;
-    border-radius: 6px;
-}
+    ::-webkit-scrollbar-thumb {
+        background: var(--scrollbar-thumb);
+        border-radius: 6px;
+    }
 
-::-webkit-scrollbar-thumb:hover {
-    background: #555;
-}
-
-body {
-    scrollbar-color: #888 #d8d8d8;
-    scrollbar-width: thin;
-}
+    ::-webkit-scrollbar-thumb:hover {
+        background: var(--scrollbar-thumb-hover);
+    }
 
 /* END Scrollbar Customization */
+
+/* Dark Mode Toggle Switch */
+
+.toggle-container {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #121212;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* Dark Mode Styling */
+
+body.dark-mode {
+    --background-color: #121212;
+    --header-background: #121212;
+    --message-background: #2c2c2c;
+    --message-text: #e0e0e0;
+    --input-background: #1e1e1e;
+    --button-background: #333333;
+    --button-text: #ffffff;
+    --text-color: #e0e0e0;
+    --scrollbar-track: #121212;
+    --scrollbar-thumb: #555;
+    --scrollbar-thumb-hover: #777;
+    --button-hover: #444444;
+}
+
+body.dark-mode .header-link:hover {
+    color: #bbbbbb;
+}
+
+body.dark-mode input::placeholder {
+    color: #aaa;
+}
+
+/* END Dark Mode Styling */
+

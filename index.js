@@ -3,6 +3,32 @@ const messagesContainer = document.querySelector('.messages-container')
 const headerHeight = header.offsetHeight;
 messagesContainer.style.top = `${headerHeight}px`;
 
+const darkModeToggle = document.getElementById('darkModeToggle');
+const darkModePreference = localStorage.getItem('darkMode');
+
+if (darkModePreference !== null) {
+    if (darkModePreference ==='enabled') {
+        document.body.classList.add('dark-mode');
+        darkModeToggle.checked = true;
+    } else {
+        document.body.classList.remove('dark-mode');
+        darkModeToggle.checked = false;
+    }
+} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    document.body.classList.add('dark-mode');
+    darkModeToggle.checked = true;
+}
+
+darkModeToggle.addEventListener('change', function() {
+    if (this.checked) {
+        document.body.classList.add('dark-mode');
+        localStorage.setItem('darkMode', 'enabled'); 
+    } else {
+        document.body.classList.remove('dark-mode');
+        localStorage.setItem('darkMode', 'disabled');
+    }
+}); 
+
 function handleSubmit() {
     const input = document.getElementById('userInput');
     const text = input.value.trim();
