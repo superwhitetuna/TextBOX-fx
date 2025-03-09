@@ -4,28 +4,30 @@ const headerHeight = header.offsetHeight;
 messagesContainer.style.top = `${headerHeight}px`;
 
 const darkModeToggle = document.getElementById('darkModeToggle');
+const modeText = document.querySelector('.mode-text');
 const darkModePreference = localStorage.getItem('darkMode');
 
-if (darkModePreference !== null) {
-    if (darkModePreference ==='enabled') {
-        document.body.classList.add('dark-mode');
-        darkModeToggle.checked = true;
-    } else {
-        document.body.classList.remove('dark-mode');
-        darkModeToggle.checked = false;
-    }
-} else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+if (darkModePreference ==='enabled' ||
+    (darkModePreference === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.body.classList.add('dark-mode');
     darkModeToggle.checked = true;
+    modeText.textContent = 'Light Mode';
+} else {
+    document.body.classList.remove('dark-mode');
+    darkModeToggle.checked = false;
+    modeText.textContent = 'Dark Mode';
 }
+
 
 darkModeToggle.addEventListener('change', function() {
     if (this.checked) {
         document.body.classList.add('dark-mode');
-        localStorage.setItem('darkMode', 'enabled'); 
+        localStorage.setItem('darkMode', 'enabled');
+        modeText.textContent = 'Light Mode'; 
     } else {
         document.body.classList.remove('dark-mode');
         localStorage.setItem('darkMode', 'disabled');
+        modeText.textContent = 'Dark Mode';
     }
 }); 
 
