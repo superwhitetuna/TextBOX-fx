@@ -16,6 +16,7 @@
 /* Styling */
 
 body {
+    font-family: system-ui;
     background-color: var(--background-color);
     color: var(--text-color);
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
@@ -284,6 +285,7 @@ textarea {
     min-height: 20px;
     max-height: 100px;
     overflow-y: auto;
+    font-family: inherit;
 }
 
 button {
