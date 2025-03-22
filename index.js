@@ -64,7 +64,10 @@ function handleSubmit() {
 
 document.getElementById('userInput').addEventListener('keypress', function(event) {
     if (event.key === 'Enter') {
-        handleSubmit();
+        if (!event.shiftKey) {
+            event.preventDefault();
+            handleSubmit();
+        }
     }
 });
 
