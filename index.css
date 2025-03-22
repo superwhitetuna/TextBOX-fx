@@ -93,8 +93,9 @@ body {
     border-radius: 4px;
     color: var(--message-text);
     max-width: 99%;
-    word-wrap: break-word;
+    overflow-wrap: break-word;
     transition: background-color 0.4s, color 0.4s;
+    white-space: pre-wrap;
 }
 
 /* Message Effects */
@@ -418,7 +419,7 @@ input:checked + .slider:after {
     background-color: #121212;
 }
 
-/* END Dark Mode Styling Switch */
+/* END Dark Mode Toggle Switch */
 
 /* Dark Mode Styling */
 

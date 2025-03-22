@@ -8,7 +8,7 @@ const modeText = document.querySelector('.mode-text');
 const darkModePreference = localStorage.getItem('darkMode');
 
 if (darkModePreference ==='enabled' ||
-    (darkModePreference === null && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+    (darkModePreference === 'disabled' && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
     document.body.classList.add('dark-mode');
     darkModeToggle.checked = true;
     modeText.textContent = 'Light Mode';
@@ -33,7 +33,7 @@ darkModeToggle.addEventListener('change', function() {
 
 function handleSubmit() {
     const input = document.getElementById('userInput');
-    const text = input.value.trim();
+    const text = input.value;
     
     if (text) {
         const messagesDiv = document.getElementById('messages');
