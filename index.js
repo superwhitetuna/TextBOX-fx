@@ -1,7 +1,20 @@
 const header = document.querySelector('.header');
 const messagesContainer = document.querySelector('.messages-container')
+const inputContainer = document.querySelector('.input-container');
 const headerHeight = header.offsetHeight;
 messagesContainer.style.top = `${headerHeight}px`;
+const initialInputHeight = inputContainer.offsetHeight;
+messagesContainer.style.bottom = `${initialInputHeight}px`;
+
+const resizeObserver = new ResizeObserver(entries => {
+    for (let entry of entries) {
+        if (entry.target === inputContainer) {
+            const inputHeight = entry.contentRect.height;
+            messagesContainer.style.bottom = `${inputHeight}px`;
+        }
+    }
+})
+resizeObserver.observe(inputContainer);
 
 const darkModeToggle = document.getElementById('darkModeToggle');
 const modeText = document.querySelector('.mode-text');
@@ -17,7 +30,6 @@ if (darkModePreference ==='enabled' ||
     darkModeToggle.checked = false;
     modeText.textContent = 'Dark Mode';
 }
-
 
 darkModeToggle.addEventListener('change', function() {
     if (this.checked) {
