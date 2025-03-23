@@ -62,13 +62,18 @@ function handleSubmit() {
     }
 }
 
-document.getElementById('userInput').addEventListener('keypress', function(event) {
-    if (event.key === 'Enter') {
-        if (!event.shiftKey) {
-            event.preventDefault();
-            handleSubmit();
+const isMobile = /iPhone|iPad|iPod|Android/i.test(navigator.userAgent);
+
+if (!isMobile) {
+    document.getElementById('userInput').addEventListener('keypress', function(event) {
+        if (event.key === 'Enter') {
+            if (!event.shiftKey) {
+                event.preventDefault();
+                handleSubmit();
+            }
         }
-    }
-});
+    });
+}
+
 
 document.getElementById('submitButton').addEventListener('click', handleSubmit);

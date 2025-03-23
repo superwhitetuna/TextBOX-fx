@@ -353,6 +353,12 @@ button:hover {
     gap: 10px;
 }
 
+@media (max-width: 600px) {
+    .header-right {
+        gap: 25px;
+    }
+}
+
 .switch {
     position: relative;
     display: inline-block;
