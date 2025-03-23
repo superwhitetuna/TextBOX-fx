@@ -22,7 +22,6 @@ body {
     scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
     scrollbar-width: thin;
     transition: background-color 0.4s, color 0.4s;
-    font-size: 16px;
 }
 
 .header {
@@ -287,6 +286,7 @@ textarea {
     max-height: 100px;
     overflow-y: auto;
     font-family: inherit;
+    font-size: 16px;
 }
 
 button {
